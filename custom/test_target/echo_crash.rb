@@ -20,7 +20,7 @@ class MetasploitModule < Msf::Exploit::Remote
     ))
 
     register_options([
-      Opt::RHOST(),
+      Opt::RHOST(127.0.0.1),
       Opt::RPORT(1337)
     ])
   end

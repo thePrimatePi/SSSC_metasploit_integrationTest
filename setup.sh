@@ -82,3 +82,8 @@ bundle install
 
 # Done
 echo "✅ Ruby environment ready for Metasploit"
+
+
+# REMO ### TAKE ALL THE CUSTOM EXPLOITS AND STORE THEM IN THE METASPLOIT-FRAMEWORK!
+
+./setup_customExploits.sh
