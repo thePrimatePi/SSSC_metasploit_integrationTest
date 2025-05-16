@@ -1,0 +1,1 @@
+this is a stupid test dummy. just host the python server. it listens to the socket and once it reads a string from the socket that contains the substring "crash", it crashes, lol
