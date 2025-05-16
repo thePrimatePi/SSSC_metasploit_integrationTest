@@ -1,15 +1,25 @@
 #!/bin/bash
 
-# Update system
-sudo apt update
+# Update packages
+sudo apt update && sudo apt install -y \
+  git curl gnupg2 build-essential libreadline-dev libssl-dev \
+  libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev \
+  zlib1g zlib1g-dev libxml2 libxml2-dev libxslt1-dev ruby-full \
+  libyaml-dev openssl autoconf libgmp-dev libgmp10 \
+  libcurl4-openssl-dev nmap postgresql postgresql-contrib \
+  libapr1 libaprutil1 libsvn1
 
-# Install curl if not present
-sudo apt install -y curl
+# Clone Metasploit
+git clone https://github.com/rapid7/metasploit-framework.git
+cd metasploit-framework
 
-# Download and install Metasploit via Rapid7 installer
-curl https://raw.githubusercontent.com/rapid7/metasploit-framework/master/msfinstall > msfinstall
-chmod +x msfinstall
-sudo ./msfinstall
+# Install Ruby gems
+gem install bundler
+bundle install
 
-# Confirm installation
+# Link msfconsole to PATH
+echo "alias msfconsole='$(pwd)/msfconsole'" >> ~/.bashrc
+source ~/.bashrc
+
+# Test
 msfconsole --version
