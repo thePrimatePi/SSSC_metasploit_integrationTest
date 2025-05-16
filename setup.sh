@@ -25,7 +25,7 @@ source ~/.bashrc
 msfconsole --version
 
 
-# LET'S MAKE THE SETUP S.T. WE CAN JUST CALL msfconsole REGARDLESS OF CURRENT DIRECTORY
+# LET'S MAKE THE SETUP S.T. WE CAN JUST CALL msfconsole REGARDLESS OF CURRENT DIRECTORY # REMO
 
 # Full path to your msfconsole script
 MSF_PATH="/workspaces/SSSC_metasploit_integrationTest/metasploit-framework/msfconsole"
