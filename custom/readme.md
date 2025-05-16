@@ -1,0 +1,3 @@
+# FYI
+
+This folder is supposed to be stuffed into `/workspaces/SSSC_metasploit_integrationTest/metasploit-framework/modules/exploits/` s.t. you have the folder `/workspaces/SSSC_metasploit_integrationTest/metasploit-framework/modules/exploits/custom/` there with all the custom modules. Since the folder `metasploit-framework` is just a link to another repo, the custom modules are not save without specific backup like in this folder.
