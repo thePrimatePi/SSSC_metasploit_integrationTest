@@ -48,3 +48,37 @@ echo "✅ Symlink created: msfconsole → $MSF_PATH"
 
 # Test it
 msfconsole --version
+
+
+
+# ------------------------------
+# Install RVM and Ruby 3.2.5
+# ------------------------------
+echo "🔧 Installing RVM and Ruby 3.2.5..."
+
+# Install RVM
+\curl -sSL https://get.rvm.io | bash -s stable
+
+# Load RVM into current shell session
+source ~/.rvm/scripts/rvm
+
+# Install Ruby 3.2.5 and use it
+rvm install "ruby-3.2.5"
+rvm use 3.2.5 --default
+
+# Verify Ruby version
+ruby -v
+
+# ------------------------------
+# Install Metasploit Ruby Gems
+# ------------------------------
+echo "📦 Installing required gems..."
+
+cd /workspaces/SSSC_metasploit_integrationTest/metasploit-framework
+
+# Install bundler and gems
+gem install bundler
+bundle install
+
+# Done
+echo "✅ Ruby environment ready for Metasploit"
