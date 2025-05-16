@@ -12,8 +12,11 @@ class MetasploitModule < Msf::Exploit::Remote
       'Author'         => [ 'RemoTest' ],
       'License'        => MSF_LICENSE,
       'Platform'       => 'unix',
+      'Arch'           => ARCH_CMD,       # Required to suppress payload compatibility error
+      'Payload'        => {},             # Disable payload requirement
       'Targets'        => [ [ 'Automatic', {} ] ],
-      'DefaultTarget'  => 0
+      'DefaultTarget'  => 0,
+      'DisclosureDate' => '2025-05-16'
     ))
 
     register_options([
