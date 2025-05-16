@@ -1,11 +1,15 @@
 #!/bin/bash
 
-# Update and install Metasploit
+# Update system
 sudo apt update
-sudo apt install -y metasploit-framework
 
-# (Optional) Install other tools
-# sudo apt install -y nmap python3-pip
+# Install curl if not present
+sudo apt install -y curl
+
+# Download and install Metasploit via Rapid7 installer
+curl https://raw.githubusercontent.com/rapid7/metasploit-framework/master/msfinstall > msfinstall
+chmod +x msfinstall
+sudo ./msfinstall
 
 # Confirm installation
 msfconsole --version
