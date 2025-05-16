@@ -1,1 +1,0 @@
-# SSSC_metasploit_integrationTest
