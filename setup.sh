@@ -86,4 +86,5 @@ echo "✅ Ruby environment ready for Metasploit"
 
 # REMO ### TAKE ALL THE CUSTOM EXPLOITS AND STORE THEM IN THE METASPLOIT-FRAMEWORK!
 
-/workspaces/SSSC_metasploit_integrationTest/setup_customExploits.sh
+cd /workspaces/SSSC_metasploit_integrationTest
+./setup_customExploits.sh
