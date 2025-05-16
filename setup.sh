@@ -23,3 +23,28 @@ source ~/.bashrc
 
 # Test
 msfconsole --version
+
+
+# LET'S MAKE THE SETUP S.T. WE CAN JUST CALL msfconsole REGARDLESS OF CURRENT DIRECTORY
+
+# Full path to your msfconsole script
+MSF_PATH="/workspaces/SSSC_metasploit_integrationTest/metasploit-framework/msfconsole"
+SYMLINK_PATH="/usr/local/bin/msfconsole"
+
+# Check if msfconsole exists
+if [ ! -f "$MSF_PATH" ]; then
+  echo "❌ msfconsole not found at $MSF_PATH"
+  exit 1
+fi
+
+# Remove old symlink if it exists
+if [ -L "$SYMLINK_PATH" ]; then
+  sudo rm "$SYMLINK_PATH"
+fi
+
+# Create a new symlink
+sudo ln -s "$MSF_PATH" "$SYMLINK_PATH"
+echo "✅ Symlink created: msfconsole → $MSF_PATH"
+
+# Test it
+msfconsole --version
